@@ -1,0 +1,7 @@
+[package]
+name = "advent2021"
+version = "1.2.0"
+edition = "2021"
+
+[dependencies]
+lazy_static = "1.4"
