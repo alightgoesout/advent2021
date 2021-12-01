@@ -1,3 +1,4 @@
+use itertools::Itertools;
 use lazy_static::lazy_static;
 
 use super::input;
@@ -27,18 +28,36 @@ impl Puzzle for Day1 {
 }
 
 fn count_increases(input: &[u32]) -> usize {
-    input
-        .iter()
-        .zip(input.iter().skip(1))
-        .filter(|(a, b)| a < b)
-        .count()
+    input.iter().tuple_windows().filter(|(a, b)| a < b).count()
 }
 
 fn three_elements_sliding_window(input: &[u32]) -> Vec<u32> {
     input
         .iter()
-        .zip(input.iter().skip(1))
-        .zip(input.iter().skip(2))
-        .map(|((a, b), c)| a + b + c)
+        .tuple_windows()
+        .map(|(a, b, c)| a + b + c)
         .collect()
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn count_increases_should_return_7_for_sample_input() {
+        let input = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
+
+        let result = count_increases(&input);
+
+        assert_eq!(result, 7);
+    }
+
+    #[test]
+    fn three_elements_sliding_window_should_return_the_correct_vec_for_sample() {
+        let input = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
+
+        let result = three_elements_sliding_window(&input);
+
+        assert_eq!(result, vec![607, 618, 618, 617, 647, 716, 769, 792]);
+    }
 }
