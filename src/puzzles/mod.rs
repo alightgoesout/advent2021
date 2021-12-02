@@ -4,6 +4,7 @@ use std::time::Instant;
 mod input;
 
 mod day01;
+mod day02;
 
 pub trait Puzzle {
     fn number(&self) -> u8;
@@ -22,8 +23,11 @@ pub trait Puzzle {
 }
 
 pub fn puzzles() -> HashMap<u8, Box<dyn Puzzle>> {
-    [Box::new(day01::Day1) as Box<dyn Puzzle>]
-        .into_iter()
-        .map(|puzzle| (puzzle.number(), puzzle))
-        .collect()
+    [
+        Box::new(day01::Day1) as Box<dyn Puzzle>,
+        Box::new(day02::Day2),
+    ]
+    .into_iter()
+    .map(|puzzle| (puzzle.number(), puzzle))
+    .collect()
 }

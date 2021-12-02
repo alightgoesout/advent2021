@@ -5,7 +5,7 @@ use super::input;
 use super::Puzzle;
 
 lazy_static! {
-    static ref INPUT: Vec<u32> = input::read_lines("day01");
+    static ref INPUT: Vec<u32> = input::read_lines_from_file("day01");
 }
 
 pub struct Day1;
