@@ -9,7 +9,7 @@ fn read_day_from_args() -> Option<u8> {
 
 fn main() {
     let puzzles = puzzles::puzzles();
-    read_day_from_args()
-        .and_then(|day| puzzles.get(&day))
-        .map(|puzzle| puzzle.execute());
+    if let Some(puzzle) = read_day_from_args().and_then(|day| puzzles.get(&day)) {
+        puzzle.execute()
+    }
 }
