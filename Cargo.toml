@@ -1,8 +1,9 @@
 [package]
 name = "advent2021"
-version = "3.2.0"
+version = "4.2.0"
 edition = "2021"
 
 [dependencies]
 lazy_static = "1.4"
 itertools = "0.10"
+regex = "1.5"
