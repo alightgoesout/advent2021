@@ -1,6 +1,5 @@
 use std::env;
 
-mod input;
 mod puzzles;
 
 fn read_day_from_args() -> Option<u8> {
