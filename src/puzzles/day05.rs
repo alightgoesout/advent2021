@@ -77,7 +77,7 @@ impl FromStr for Position {
         s.split_once(',')
             .ok_or(())
             .and_then(|(x, y)| match (x.parse(), y.parse()) {
-                (Ok(x), Ok(y)) => Ok(Position { x: x, y: y }),
+                (Ok(x), Ok(y)) => Ok(Position { x, y }),
                 _ => Err(()),
             })
     }

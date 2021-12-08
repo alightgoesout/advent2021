@@ -35,8 +35,8 @@ struct LanternfishSchool([usize; 9]);
 impl LanternfishSchool {
     fn new(fishes: &[u8]) -> Self {
         let mut school = [0; 9];
-        for i in 0..9 {
-            school[i] = fishes.iter().filter(|&&n| n == i as u8).count()
+        for (i, s) in school.iter_mut().enumerate() {
+            *s = fishes.iter().filter(|&&n| n == i as u8).count()
         }
         Self(school)
     }
