@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "advent2021"
-version = "9.2.0"
+version = "10.2.0"
 dependencies = [
  "itertools",
  "lazy_static",
