@@ -3,6 +3,13 @@ use std::fs::File;
 use std::io::{BufRead, BufReader, Read};
 use std::str::FromStr;
 
+pub fn read_file(name: &str) -> String {
+    std::fs::read_to_string(format!("src/puzzles/input/{}", name))
+        .unwrap()
+        .trim()
+        .to_string()
+}
+
 pub fn read_lines_from_file<T>(name: &str) -> Vec<T>
 where
     T: FromStr,

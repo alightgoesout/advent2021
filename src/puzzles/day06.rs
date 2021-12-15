@@ -3,7 +3,7 @@ use lazy_static::lazy_static;
 use super::{input, Puzzle};
 
 lazy_static! {
-    static ref INPUT: Vec<u8> = input::read_lines_from_file::<String>("day06")[0]
+    static ref INPUT: Vec<u8> = input::read_file("day06")
         .split(',')
         .map(|n| n.parse().unwrap())
         .collect();
