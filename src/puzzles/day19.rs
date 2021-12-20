@@ -308,8 +308,6 @@ mod test {
     fn normalize_first_two_scanners_from_sample() {
         let normalized_scanners = normalize_scanners(&SAMPLE[0..=1]);
 
-        println!("{:?}", normalized_scanners);
-
         let expected: Vec<Position> = vec![
             "-618,-824,-621".into(),
             "-537,-823,-458".into(),
