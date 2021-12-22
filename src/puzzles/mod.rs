@@ -24,6 +24,7 @@ mod day18;
 mod day19;
 mod day20;
 mod day21;
+mod day22;
 
 pub trait Puzzle {
     fn number(&self) -> u8;
@@ -64,6 +65,7 @@ pub fn puzzles() -> HashMap<u8, Box<dyn Puzzle>> {
         Box::new(day19::Day19),
         Box::new(day20::Day20),
         Box::new(day21::Day21),
+        Box::new(day22::Day22),
     ]
     .into_iter()
     .map(|puzzle| (puzzle.number(), puzzle))
